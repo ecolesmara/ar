@@ -25,7 +25,7 @@ description: > # this means to ignore newlines until "baseurl:"
  تم إنشاء هذا جيكل العربي لمساعدة الأخوة العرب على الإستعمال السريع لجيكل دون الحاجة للقيام بالكثير من التغييرات.
  Jekyll Arabic was made to help fellow Arabs to quickly dive into Jekyll without the need to make many changes.
 baseurl: "/jekyll-arabic" # المسار الجانبي الخاص بموقعك مثلاً (/blog)
-url: "http://tehchieftain.github.io/jekyll-arabic" # هوستنيم و بروتوكول موقع
+url: "http://tehchieftain.github.io/" # هوستنيم و بروتوكول موقع
 twitter_username: jekyllrb
 github_username:  jekyll
 
