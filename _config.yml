@@ -33,4 +33,4 @@ github_username:  jekyll
 markdown: kramdown
 highlighter: rouge
 
-theme: jekyll-theme-leap-day
+theme: jekyll-theme-cayman
