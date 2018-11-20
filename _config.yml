@@ -32,4 +32,4 @@ github_username:  jekyll
 markdown: kramdown
 highlighter: rouge
 
-theme: jekyll-theme-architect
+theme: jekyll-theme-modernist
