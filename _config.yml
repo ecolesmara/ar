@@ -22,8 +22,7 @@ email: ecolesmara@gmail.com
 #أكتب شرح رائع عن موقعك هنا. سوف يظهر في (head meta) الخاص بمستندك (من اجل نتائج بحث قووقل) و في شرح موقعك في ملف feed.xml
 
 description: > # this means to ignore newlines until "baseurl:" 
-موقع المدرسة اﻻبتدائية السمارة بمدينة قصبة تادلة
-baseurl: "" # المسار الجانبي الخاص بموقعك مثلاً (/blog)
+baseurl: "/ar" # المسار الجانبي الخاص بموقعك مثلاً (/blog)
 url: "http://ecolesmara.com" # هوستنيم و بروتوكول موقع
 twitter_username: jekyllrb
 github_username:  jekyll
