@@ -1,0 +1,1079 @@
+[1mdiff --git a/_config.yml b/_config.yml[m
+[1mindex 6cd01b7..3716820 100644[m
+[1m--- a/_config.yml[m
+[1m+++ b/_config.yml[m
+[36m@@ -31,4 +31,4 @@[m [mgithub_username:  jekyll[m
+ markdown: kramdown[m
+ highlighter: rouge[m
+ [m
+[31m-theme: jekyll-theme-modernist[m
+[32m+[m[32m#theme: jekyll-theme-modernist[m
+[1mdiff --git a/_includes/footer.html b/_includes/footer.html[m
+[1mdeleted file mode 100644[m
+[1mindex 72239f1..0000000[m
+[1m--- a/_includes/footer.html[m
+[1m+++ /dev/null[m
+[36m@@ -1,38 +0,0 @@[m
+[31m-<footer class="site-footer">[m
+[31m-[m
+[31m-  <div class="wrapper">[m
+[31m-[m
+[31m-    <h2 class="footer-heading">{{ site.title }}</h2>[m
+[31m-[m
+[31m-    <div class="footer-col-wrapper">[m
+[31m-      <div class="footer-col footer-col-1">[m
+[31m-        <ul class="contact-list">[m
+[31m-          <li>{{ site.title }}</li>[m
+[31m-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>[m
+[31m-        </ul>[m
+[31m-      </div>[m
+[31m-[m
+[31m-      <div class="footer-col footer-col-2">[m
+[31m-        <ul class="social-media-list">[m
+[31m-          {% if site.github_username %}[m
+[31m-          <li>[m
+[31m-            {% include icon-github.html username=site.github_username %}[m
+[31m-          </li>[m
+[31m-          {% endif %}[m
+[31m-[m
+[31m-          {% if site.twitter_username %}[m
+[31m-          <li>[m
+[31m-            {% include icon-twitter.html username=site.twitter_username %}[m
+[31m-          </li>[m
+[31m-          {% endif %}[m
+[31m-        </ul>[m
+[31m-      </div>[m
+[31m-[m
+[31m-      <div class="footer-col footer-col-3">[m
+[31m-        <p>{{ site.description }}</p>[m
+[31m-      </div>[m
+[31m-    </div>[m
+[31m-[m
+[31m-  </div>[m
+[31m-[m
+[31m-</footer>[m
+[1mdiff --git a/_includes/head.html b/_includes/head.html[m
+[1mdeleted file mode 100644[m
+[1mindex 1598d6f..0000000[m
+[1m--- a/_includes/head.html[m
+[1m+++ /dev/null[m
+[36m@@ -1,12 +0,0 @@[m
+[31m-<head>[m
+[31m-  <meta charset="utf-8">[m
+[31m-  <meta http-equiv="X-UA-Compatible" content="IE=edge">[m
+[31m-  <meta name="viewport" content="width=device-width, initial-scale=1">[m
+[31m-[m
+[31m-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>[m
+[31m-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">[m
+[31m-[m
+[31m-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">[m
+[31m-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">[m
+[31m-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">[m
+[31m-</head>[m
+[1mdiff --git a/_includes/header.html b/_includes/header.html[m
+[1mdeleted file mode 100644[m
+[1mindex b3f86db..0000000[m
+[1m--- a/_includes/header.html[m
+[1m+++ /dev/null[m
+[36m@@ -1,27 +0,0 @@[m
+[31m-<header class="site-header">[m
+[31m-[m
+[31m-  <div class="wrapper">[m
+[31m-[m
+[31m-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>[m
+[31m-[m
+[31m-    <nav class="site-nav">[m
+[31m-      <a href="#" class="menu-icon">[m
+[31m-        <svg viewBox="0 0 18 15">[m
+[31m-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>[m
+[31m-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>[m
+[31m-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>[m
+[31m-        </svg>[m
+[31m-      </a>[m
+[31m-[m
+[31m-      <div class="trigger">[m
+[31m-        {% for my_page in site.pages %}[m
+[31m-          {% if my_page.title %}[m
+[31m-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>[m
+[31m-          {% endif %}[m
+[31m-        {% endfor %}[m
+[31m-      </div>[m
+[31m-    </nav>[m
+[31m-[m
+[31m-  </div>[m
+[31m-[m
+[31m-</header>[m
+[1mdiff --git a/_includes/icon-github.html b/_includes/icon-github.html[m
+[1mdeleted file mode 100644[m
+[1mindex e501a16..0000000[m
+[1m--- a/_includes/icon-github.html[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-<a href="https://github.com/{{ include.username }}"><span class="icon icon--github">{% include icon-github.svg %}</span><span class="username">{{ include.username }}</span></a>[m
+[1mdiff --git a/_includes/icon-github.svg b/_includes/icon-github.svg[m
+[1mdeleted file mode 100644[m
+[1mindex 4422c4f..0000000[m
+[1m--- a/_includes/icon-github.svg[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-<svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>[m
+[1mdiff --git a/_includes/icon-twitter.html b/_includes/icon-twitter.html[m
+[1mdeleted file mode 100644[m
+[1mindex e623dbd..0000000[m
+[1m--- a/_includes/icon-twitter.html[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-<a href="https://twitter.com/{{ include.username }}"><span class="icon icon--twitter">{% include icon-twitter.svg %}</span><span class="username">{{ include.username }}</span></a>[m
+[1mdiff --git a/_includes/icon-twitter.svg b/_includes/icon-twitter.svg[m
+[1mdeleted file mode 100644[m
+[1mindex dcf660e..0000000[m
+[1m--- a/_includes/icon-twitter.svg[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-<svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>[m
+[1mdiff --git a/_layouts/default.html b/_layouts/default.html[m
+[1mdeleted file mode 100644[m
+[1mindex e4ab96f..0000000[m
+[1m--- a/_layouts/default.html[m
+[1m+++ /dev/null[m
+[36m@@ -1,20 +0,0 @@[m
+[31m-<!DOCTYPE html>[m
+[31m-<html>[m
+[31m-[m
+[31m-  {% include head.html %}[m
+[31m-[m
+[31m-  <body>[m
+[31m-[m
+[31m-    {% include header.html %}[m
+[31m-[m
+[31m-    <div class="page-content">[m
+[31m-      <div class="wrapper">[m
+[31m-        {{ content }}[m
+[31m-      </div>[m
+[31m-    </div>[m
+[31m-[m
+[31m-    {% include footer.html %}[m
+[31m-[m
+[31m-  </body>[m
+[31m-[m
+[31m-</html>[m
+[1mdiff --git a/_layouts/page.html b/_layouts/page.html[m
+[1mdeleted file mode 100644[m
+[1mindex ce233ad..0000000[m
+[1m--- a/_layouts/page.html[m
+[1m+++ /dev/null[m
+[36m@@ -1,14 +0,0 @@[m
+[31m----[m
+[31m-layout: default[m
+[31m----[m
+[31m-<article class="post">[m
+[31m-[m
+[31m-  <header class="post-header">[m
+[31m-    <h1 class="post-title">{{ page.title }}</h1>[m
+[31m-  </header>[m
+[31m-[m
+[31m-  <div class="post-content">[m
+[31m-    {{ content }}[m
+[31m-  </div>[m
+[31m-[m
+[31m-</article>[m
+[1mdiff --git a/_layouts/post.html b/_layouts/post.html[m
+[1mdeleted file mode 100644[m
+[1mindex 3a0fb52..0000000[m
+[1m--- a/_layouts/post.html[m
+[1m+++ /dev/null[m
+[36m@@ -1,15 +0,0 @@[m
+[31m----[m
+[31m-layout: default[m
+[31m----[m
+[31m-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">[m
+[31m-[m
+[31m-  <header class="post-header">[m
+[31m-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>[m
+[31m-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>[m
+[31m-  </header>[m
+[31m-[m
+[31m-  <div class="post-content" itemprop="articleBody">[m
+[31m-    {{ content }}[m
+[31m-  </div>[m
+[31m-[m
+[31m-</article>[m
+[1mdiff --git a/_posts/2016-05-27-welcome-to-jekyll.markdown b/_posts/2016-05-27-welcome-to-jekyll.markdown[m
+[1mdeleted file mode 100644[m
+[1mindex dc2146a..0000000[m
+[1m--- a/_posts/2016-05-27-welcome-to-jekyll.markdown[m
+[1m+++ /dev/null[m
+[36m@@ -1,26 +0,0 @@[m
+[31m----[m
+[31m-layout: post[m
+[31m-title:  "مرحباً بك في جيكل!"[m
+[31m-date:   2016-05-27 20:10 +0300[m
+[31m-categories: jekyll update[m
+[31m----[m
+[31m-سوف تجد هذا المنشور في مجلد `posts_`. تفضل و قم بتعديله و من ثم إعادة بناء الموقع لمشاهدة التغييرات. تستطيع إعادة بناء الموقع بعدة طرق مختلفة, لكن الطريقة المألوفة هي ان تكتب `jekyll serve`, الذي يقوم بتشغيل خادم ويب و يقوم بإنتاج/إظهار تعديلات ملفات موقعك بشكل أوتوماتيكي .[m
+[31m-[m
+[31m-لإضافة منشورات جديدة, ببساطة أضف ملف جديد في مجلد `posts_` يتبع الإمتداد `YYYY-MM-DD-name-of-post.ext` و أدخل مدخلات ال front matter الضرورية. ألقي نظرة على اكواد المصدر الخاصة بهذا الملف للحصول على فكرة عن كيفية عمل المنشورات.[m
+[31m-[m
+[31m-جيكل يقدم دعم قوي للقطات الأكواد:[m
+[31m-{:style="direction:ltr;"}[m
+[31m-{% highlight ruby %}[m
+[31m-def print_hi(name)[m
+[31m-  puts "Hi, #{name}"[m
+[31m-end[m
+[31m-print_hi('Tom')[m
+[31m-#=> prints 'Hi, Tom' to STDOUT.[m
+[31m-{% endhighlight %}[m
+[31m-[m
+[31m-إلقي نظرة على [Jekyll docs][jekyll-docs] لمعلومات أكثر حول كيفية الحصول على أفضل ما يمكن من جيكل. قدم جميع طلبات البقز/مزايا [Jekyll’s GitHub repo][jekyll-gh]. إذا كان لديك أي سؤال, تستطيغ السؤال على [Jekyll Talk][jekyll-talk].[m
+[31m-[m
+[31m-[m
+[31m-[jekyll-docs]: http://jekyllrb.com/docs/home[m
+[31m-[jekyll-gh]:   https://github.com/jekyll/jekyll[m
+[31m-[jekyll-talk]: https://talk.jekyllrb.com/[m
+[1mdiff --git a/_sass/_base.scss b/_sass/_base.scss[m
+[1mdeleted file mode 100644[m
+[1mindex 2fa3a15..0000000[m
+[1m--- a/_sass/_base.scss[m
+[1m+++ /dev/null[m
+[36m@@ -1,206 +0,0 @@[m
+[31m-/**[m
+[31m- * Reset some basic elements[m
+[31m- */[m
+[31m-body, h1, h2, h3, h4, h5, h6,[m
+[31m-p, blockquote, pre, hr,[m
+[31m-dl, dd, ol, ul, figure {[m
+[31m-    margin: 0;[m
+[31m-    padding: 0;[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Basic styling[m
+[31m- */[m
+[31m-body {[m
+[31m-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;[m
+[31m-    color: $text-color;[m
+[31m-    background-color: #b3ccff;[m
+[31m-    -webkit-text-size-adjust: 100%;[m
+[31m-    -webkit-font-feature-settings: "kern" 1;[m
+[31m-    -moz-font-feature-settings: "kern" 1;[m
+[31m-    -o-font-feature-settings: "kern" 1;[m
+[31m-    font-feature-settings: "kern" 1;[m
+[31m-    font-kerning: normal;[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Set `margin-bottom` to maintain vertical rhythm[m
+[31m- */[m
+[31m-h1, h2, h3, h4, h5, h6,[m
+[31m-p, blockquote, pre,[m
+[31m-ul, ol, dl, figure,[m
+[31m-%vertical-rhythm {[m
+[31m-    margin-bottom: $spacing-unit / 2;[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Images[m
+[31m- */[m
+[31m-img {[m
+[31m-    max-width: 100%;[m
+[31m-    vertical-align: middle;[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Figures[m
+[31m- */[m
+[31m-figure > img {[m
+[31m-    display: block;[m
+[31m-}[m
+[31m-[m
+[31m-figcaption {[m
+[31m-    font-size: $small-font-size;[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Lists[m
+[31m- */[m
+[31m-ul, ol {[m
+[31m-    margin-left: $spacing-unit;[m
+[31m-}[m
+[31m-[m
+[31m-li {[m
+[31m-    > ul,[m
+[31m-    > ol {[m
+[31m-         margin-bottom: 0;[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Headings[m
+[31m- */[m
+[31m-h1, h2, h3, h4, h5, h6 {[m
+[31m-    font-weight: $base-font-weight;[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Links[m
+[31m- */[m
+[31m-a {[m
+[31m-    color: $brand-color;[m
+[31m-    text-decoration: none;[m
+[31m-[m
+[31m-    &:visited {[m
+[31m-        color: darken($brand-color, 15%);[m
+[31m-    }[m
+[31m-[m
+[31m-    &:hover {[m
+[31m-        color: $text-color;[m
+[31m-        text-decoration: underline;[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Blockquotes[m
+[31m- */[m
+[31m-blockquote {[m
+[31m-    color: $grey-color;[m
+[31m-    border-left: 4px solid $grey-color-light;[m
+[31m-    padding-left: $spacing-unit / 2;[m
+[31m-    font-size: 18px;[m
+[31m-    letter-spacing: -1px;[m
+[31m-    font-style: italic;[m
+[31m-[m
+[31m-    > :last-child {[m
+[31m-        margin-bottom: 0;[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Code formatting[m
+[31m- */[m
+[31m-pre,[m
+[31m-code {[m
+[31m-    font-size: 15px;[m
+[31m-    border: 1px solid $grey-color-light;[m
+[31m-    border-radius: 3px;[m
+[31m-    background-color: #eef;[m
+[31m-}[m
+[31m-[m
+[31m-code {[m
+[31m-    padding: 1px 5px;[m
+[31m-}[m
+[31m-[m
+[31m-pre {[m
+[31m-    padding: 8px 12px;[m
+[31m-    overflow-x: auto;[m
+[31m-[m
+[31m-    > code {[m
+[31m-        border: 0;[m
+[31m-        padding-right: 0;[m
+[31m-        padding-left: 0;[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Wrapper[m
+[31m- */[m
+[31m-.wrapper {[m
+[31m-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));[m
+[31m-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));[m
+[31m-    margin-right: auto;[m
+[31m-    margin-left: auto;[m
+[31m-    padding-right: $spacing-unit;[m
+[31m-    padding-left: $spacing-unit;[m
+[31m-    @extend %clearfix;[m
+[31m-[m
+[31m-    @include media-query($on-laptop) {[m
+[31m-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));[m
+[31m-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));[m
+[31m-        padding-right: $spacing-unit / 2;[m
+[31m-        padding-left: $spacing-unit / 2;[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Clearfix[m
+[31m- */[m
+[31m-%clearfix {[m
+[31m-[m
+[31m-    &:after {[m
+[31m-        content: "";[m
+[31m-        display: table;[m
+[31m-        clear: both;[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Icons[m
+[31m- */[m
+[31m-.icon {[m
+[31m-[m
+[31m-    > svg {[m
+[31m-        display: inline-block;[m
+[31m-        width: 16px;[m
+[31m-        height: 16px;[m
+[31m-        vertical-align: middle;[m
+[31m-[m
+[31m-        path {[m
+[31m-            fill: $grey-color;[m
+[31m-        }[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/_sass/_layout.scss b/_sass/_layout.scss[m
+[1mdeleted file mode 100644[m
+[1mindex a7a2d1c..0000000[m
+[1m--- a/_sass/_layout.scss[m
+[1m+++ /dev/null[m
+[36m@@ -1,245 +0,0 @@[m
+[31m-/**[m
+[31m- * Site header[m
+[31m- */[m
+[31m- .html{[m
+[31m- direction:rtl;[m
+[31m-  }[m
+[31m-.site-header {[m
+[31m-    border-top: 5px solid $grey-color-dark;[m
+[31m-    border-bottom: 1px solid $grey-color-light;[m
+[31m-    min-height: 56px;[m
+[31m-[m
+[31m-    // Positioning context for the mobile navigation icon[m
+[31m-    position: relative;[m
+[31m-}[m
+[31m-[m
+[31m-.site-title {[m
+[31m-    font-size: 26px;[m
+[31m-    font-weight: 300;[m
+[31m-    line-height: 56px;[m
+[31m-    letter-spacing: -1px;[m
+[31m-    margin-bottom: 0;[m
+[31m-    float: right;[m
+[31m-[m
+[31m-    &,[m
+[31m-    &:visited {[m
+[31m-        color: $grey-color-dark;[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-.site-nav {[m
+[31m-    float: left;[m
+[31m-    line-height: 56px;[m
+[31m-[m
+[31m-    .menu-icon {[m
+[31m-        display: none;[m
+[31m-    }[m
+[31m-[m
+[31m-    .page-link {[m
+[31m-        color: $text-color;[m
+[31m-        line-height: $base-line-height;[m
+[31m-[m
+[31m-        // Gaps between nav items, but not on the last one[m
+[31m-        &:not(:last-child) {[m
+[31m-            margin-right: 20px;[m
+[31m-        }[m
+[31m-    }[m
+[31m-[m
+[31m-    @include media-query($on-palm) {[m
+[31m-        position: absolute;[m
+[31m-        top: 9px;[m
+[31m-        right: $spacing-unit / 2;[m
+[31m-        background-color: $background-color;[m
+[31m-        border: 1px solid $grey-color-light;[m
+[31m-        border-radius: 5px;[m
+[31m-        text-align: right;[m
+[31m-[m
+[31m-        .menu-icon {[m
+[31m-            display: block;[m
+[31m-            float: left;[m
+[31m-            width: 36px;[m
+[31m-            height: 26px;[m
+[31m-            line-height: 0;[m
+[31m-            padding-top: 10px;[m
+[31m-            text-align: center;[m
+[31m-[m
+[31m-            > svg {[m
+[31m-                width: 18px;[m
+[31m-                height: 15px;[m
+[31m-[m
+[31m-                path {[m
+[31m-                    fill: $grey-color-dark;[m
+[31m-                }[m
+[31m-            }[m
+[31m-        }[m
+[31m-[m
+[31m-        .trigger {[m
+[31m-            clear: both;[m
+[31m-            display: none;[m
+[31m-        }[m
+[31m-[m
+[31m-        &:hover .trigger {[m
+[31m-            display: block;[m
+[31m-            padding-bottom: 5px;[m
+[31m-        }[m
+[31m-[m
+[31m-        .page-link {[m
+[31m-            display: block;[m
+[31m-            padding: 5px 10px;[m
+[31m-[m
+[31m-            &:not(:last-child) {[m
+[31m-                margin-right: 0;[m
+[31m-            }[m
+[31m-            margin-left: 20px;[m
+[31m-        }[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Site footer[m
+[31m- */[m
+[31m-.site-footer {[m
+[31m-    border-top: 1px solid $grey-color-light;[m
+[31m-    padding: $spacing-unit 0;[m
+[31m-}[m
+[31m-[m
+[31m-.footer-heading {[m
+[31m-    font-size: 18px;[m
+[31m-    margin-bottom: $spacing-unit / 2;[m
+[31m-}[m
+[31m-[m
+[31m-.contact-list,[m
+[31m-.social-media-list {[m
+[31m-    list-style: none;[m
+[31m-    margin-left: 0;[m
+[31m-}[m
+[31m-[m
+[31m-.footer-col-wrapper {[m
+[31m-    font-size: 15px;[m
+[31m-    color: $grey-color;[m
+[31m-    margin-left: -$spacing-unit / 2;[m
+[31m-    @extend %clearfix;[m
+[31m-}[m
+[31m-[m
+[31m-.footer-col {[m
+[31m-    float: left;[m
+[31m-    margin-bottom: $spacing-unit / 2;[m
+[31m-    padding-left: $spacing-unit / 2;[m
+[31m-}[m
+[31m-[m
+[31m-.footer-col-1 {[m
+[31m-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));[m
+[31m-    width:         calc(35% - (#{$spacing-unit} / 2));[m
+[31m-}[m
+[31m-[m
+[31m-.footer-col-2 {[m
+[31m-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));[m
+[31m-    width:         calc(20% - (#{$spacing-unit} / 2));[m
+[31m-}[m
+[31m-[m
+[31m-.footer-col-3 {[m
+[31m-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));[m
+[31m-    width:         calc(45% - (#{$spacing-unit} / 2));[m
+[31m-}[m
+[31m-[m
+[31m-@include media-query($on-laptop) {[m
+[31m-    .footer-col-1,[m
+[31m-    .footer-col-2 {[m
+[31m-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));[m
+[31m-        width:         calc(50% - (#{$spacing-unit} / 2));[m
+[31m-    }[m
+[31m-[m
+[31m-    .footer-col-3 {[m
+[31m-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));[m
+[31m-        width:         calc(100% - (#{$spacing-unit} / 2));[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-@include media-query($on-palm) {[m
+[31m-    .footer-col {[m
+[31m-        float: none;[m
+[31m-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));[m
+[31m-        width:         calc(100% - (#{$spacing-unit} / 2));[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Page content[m
+[31m- */[m
+[31m-.page-content {[m
+[31m-    padding: $spacing-unit 0;[m
+[31m-}[m
+[31m-[m
+[31m-.page-heading {[m
+[31m-    font-size: 20px;[m
+[31m-}[m
+[31m-[m
+[31m-.post-list {[m
+[31m-    margin-left: 0;[m
+[31m-    list-style: none;[m
+[31m-[m
+[31m-    > li {[m
+[31m-        margin-bottom: $spacing-unit;[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-.post-meta {[m
+[31m-    font-size: $small-font-size;[m
+[31m-    color: $grey-color;[m
+[31m-}[m
+[31m-[m
+[31m-.post-link {[m
+[31m-    display: block;[m
+[31m-    font-size: 24px;[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/**[m
+[31m- * Posts[m
+[31m- */[m
+[31m-.post-header {[m
+[31m-    margin-bottom: $spacing-unit;[m
+[31m-}[m
+[31m-[m
+[31m-.post-title {[m
+[31m-    font-size: 42px;[m
+[31m-    letter-spacing: -1px;[m
+[31m-    line-height: 1;[m
+[31m-[m
+[31m-    @include media-query($on-laptop) {[m
+[31m-        font-size: 36px;[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-.post-content {[m
+[31m-    margin-bottom: $spacing-unit;[m
+[31m-[m
+[31m-    h2 {[m
+[31m-        font-size: 32px;[m
+[31m-[m
+[31m-        @include media-query($on-laptop) {[m
+[31m-            font-size: 28px;[m
+[31m-        }[m
+[31m-    }[m
+[31m-[m
+[31m-    h3 {[m
+[31m-        font-size: 26px;[m
+[31m-[m
+[31m-        @include media-query($on-laptop) {[m
+[31m-            font-size: 22px;[m
+[31m-        }[m
+[31m-    }[m
+[31m-[m
+[31m-    h4 {[m
+[31m-        font-size: 20px;[m
+[31m-[m
+[31m-        @include media-query($on-laptop) {[m
+[31m-            font-size: 18px;[m
+[31m-        }[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/_sass/_syntax-highlighting.scss b/_sass/_syntax-highlighting.scss[m
+[1mdeleted file mode 100644[m
+[1mindex 8fac597..0000000[m
+[1m--- a/_sass/_syntax-highlighting.scss[m
+[1m+++ /dev/null[m
+[36m@@ -1,71 +0,0 @@[m
+[31m-/**[m
+[31m- * Syntax highlighting styles[m
+[31m- */[m
+[31m-.highlight {[m
+[31m-    background: #fff;[m
+[31m-    @extend %vertical-rhythm;[m
+[31m-[m
+[31m-    .highlighter-rouge & {[m
+[31m-      background: #eef;[m
+[31m-    }[m
+[31m-[m
+[31m-    .c     { color: #998; font-style: italic } // Comment[m
+[31m-    .err   { color: #a61717; background-color: #e3d2d2 } // Error[m
+[31m-    .k     { font-weight: bold } // Keyword[m
+[31m-    .o     { font-weight: bold } // Operator[m
+[31m-    .cm    { color: #998; font-style: italic } // Comment.Multiline[m
+[31m-    .cp    { color: #999; font-weight: bold } // Comment.Preproc[m
+[31m-    .c1    { color: #998; font-style: italic } // Comment.Single[m
+[31m-    .cs    { color: #999; font-weight: bold; font-style: italic } // Comment.Special[m
+[31m-    .gd    { color: #000; background-color: #fdd } // Generic.Deleted[m
+[31m-    .gd .x { color: #000; background-color: #faa } // Generic.Deleted.Specific[m
+[31m-    .ge    { font-style: italic } // Generic.Emph[m
+[31m-    .gr    { color: #a00 } // Generic.Error[m
+[31m-    .gh    { color: #999 } // Generic.Heading[m
+[31m-    .gi    { color: #000; background-color: #dfd } // Generic.Inserted[m
+[31m-    .gi .x { color: #000; background-color: #afa } // Generic.Inserted.Specific[m
+[31m-    .go    { color: #888 } // Generic.Output[m
+[31m-    .gp    { color: #555 } // Generic.Prompt[m
+[31m-    .gs    { font-weight: bold } // Generic.Strong[m
+[31m-    .gu    { color: #aaa } // Generic.Subheading[m
+[31m-    .gt    { color: #a00 } // Generic.Traceback[m
+[31m-    .kc    { font-weight: bold } // Keyword.Constant[m
+[31m-    .kd    { font-weight: bold } // Keyword.Declaration[m
+[31m-    .kp    { font-weight: bold } // Keyword.Pseudo[m
+[31m-    .kr    { font-weight: bold } // Keyword.Reserved[m
+[31m-    .kt    { color: #458; font-weight: bold } // Keyword.Type[m
+[31m-    .m     { color: #099 } // Literal.Number[m
+[31m-    .s     { color: #d14 } // Literal.String[m
+[31m-    .na    { color: #008080 } // Name.Attribute[m
+[31m-    .nb    { color: #0086B3 } // Name.Builtin[m
+[31m-    .nc    { color: #458; font-weight: bold } // Name.Class[m
+[31m-    .no    { color: #008080 } // Name.Constant[m
+[31m-    .ni    { color: #800080 } // Name.Entity[m
+[31m-    .ne    { color: #900; font-weight: bold } // Name.Exception[m
+[31m-    .nf    { color: #900; font-weight: bold } // Name.Function[m
+[31m-    .nn    { color: #555 } // Name.Namespace[m
+[31m-    .nt    { color: #000080 } // Name.Tag[m
+[31m-    .nv    { color: #008080 } // Name.Variable[m
+[31m-    .ow    { font-weight: bold } // Operator.Word[m
+[31m-    .w     { color: #bbb } // Text.Whitespace[m
+[31m-    .mf    { color: #099 } // Literal.Number.Float[m
+[31m-    .mh    { color: #099 } // Literal.Number.Hex[m
+[31m-    .mi    { color: #099 } // Literal.Number.Integer[m
+[31m-    .mo    { color: #099 } // Literal.Number.Oct[m
+[31m-    .sb    { color: #d14 } // Literal.String.Backtick[m
+[31m-    .sc    { color: #d14 } // Literal.String.Char[m
+[31m-    .sd    { color: #d14 } // Literal.String.Doc[m
+[31m-    .s2    { color: #d14 } // Literal.String.Double[m
+[31m-    .se    { color: #d14 } // Literal.String.Escape[m
+[31m-    .sh    { color: #d14 } // Literal.String.Heredoc[m
+[31m-    .si    { color: #d14 } // Literal.String.Interpol[m
+[31m-    .sx    { color: #d14 } // Literal.String.Other[m
+[31m-    .sr    { color: #009926 } // Literal.String.Regex[m
+[31m-    .s1    { color: #d14 } // Literal.String.Single[m
+[31m-    .ss    { color: #990073 } // Literal.String.Symbol[m
+[31m-    .bp    { color: #999 } // Name.Builtin.Pseudo[m
+[31m-    .vc    { color: #008080 } // Name.Variable.Class[m
+[31m-    .vg    { color: #008080 } // Name.Variable.Global[m
+[31m-    .vi    { color: #008080 } // Name.Variable.Instance[m
+[31m-    .il    { color: #099 } // Literal.Number.Integer.Long[m
+[31m-}[m
+[1mdiff --git a/css/main.scss b/css/main.scss[m
+[1mdeleted file mode 100644[m
+[1mindex b810d86..0000000[m
+[1m--- a/css/main.scss[m
+[1m+++ /dev/null[m
+[36m@@ -1,54 +0,0 @@[m
+[31m----[m
+[31m-# Only the main Sass file needs front matter (the dashes are enough)[m
+[31m----[m
+[31m-@import url(rtl.css);[m
+[31m-@charset "utf-8";[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-// Our variables[m
+[31m-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;[m
+[31m-$base-font-size:   16px;[m
+[31m-$base-font-weight: 400;[m
+[31m-$small-font-size:  $base-font-size * 0.875;[m
+[31m-$base-line-height: 1.5;[m
+[31m-[m
+[31m-$spacing-unit:     30px;[m
+[31m-[m
+[31m-$text-color:       #111;[m
+[31m-$background-color: #b3ccff;[m
+[31m-$brand-color:      #2a7ae2;[m
+[31m-[m
+[31m-$grey-color:       #828282;[m
+[31m-$grey-color-light: lighten($grey-color, 40%);[m
+[31m-$grey-color-dark:  darken($grey-color, 25%);[m
+[31m-[m
+[31m-// Width of the content area[m
+[31m-$content-width:    800px;[m
+[31m-[m
+[31m-$on-palm:          600px;[m
+[31m-$on-laptop:        800px;[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-// Use media queries like this:[m
+[31m-// @include media-query($on-palm) {[m
+[31m-//     .wrapper {[m
+[31m-//         padding-right: $spacing-unit / 2;[m
+[31m-//         padding-left: $spacing-unit / 2;[m
+[31m-//     }[m
+[31m-// }[m
+[31m-@mixin media-query($device) {[m
+[31m-    @media screen and (max-width: $device) {[m
+[31m-        @content;[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-// Import partials from `sass_dir` (defaults to `_sass`)[m
+[31m-@import[m
+[31m-        "base",[m
+[31m-        "layout",[m
+[31m-        "syntax-highlighting"[m
+[31m-;[m
+[1mdiff --git a/css/rtl.css b/css/rtl.css[m
+[1mdeleted file mode 100644[m
+[1mindex 198f425..0000000[m
+[1m--- a/css/rtl.css[m
+[1m+++ /dev/null[m
+[36m@@ -1,3 +0,0 @@[m
+[31m-html{[m
+[31m-	direction: rtl;[m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 18d7063..4c0bf81 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -1,23 +1,209 @@[m
+[31m----[m
+[31m-layout: default[m
+[31m----[m
+[31m-[m
+[31m-<div class="home">[m
+[31m-[m
+[31m-  <h1 class="page-heading">المنشورات</h1>[m
+[31m-[m
+[31m-  <ul class="post-list">[m
+[31m-    {% for post in site.posts %}[m
+[31m-      <li>[m
+[31m-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>[m
+[31m-[m
+[31m-        <h2>[m
+[31m-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>[m
+[31m-        </h2>[m
+[31m-      </li>[m
+[31m-    {% endfor %}[m
+[31m-  </ul>[m
+[31m-[m
+[31m-  <p class="rss-subscribe">إشترك <a href="{{ "/feed.xml" | prepend: site.baseurl }}">عن طريق RSS</a></p>[m
+[31m-[m
+[31m-</div>[m
+[32m+[m[32m<!DOCTYPE html>[m[41m[m
+[32m+[m[32m<!--[m[41m[m
+[32m+[m[32mTemplate Name: Escarine-Edu[m[41m[m
+[32m+[m[32mAuthor: <a href="https://www.os-templates.com/">OS Templates</a>[m[41m[m
+[32m+[m[32mAuthor URI: https://www.os-templates.com/[m[41m[m
+[32m+[m[32mLicence: Free to use under our free template licence terms[m[41m[m
+[32m+[m[32mLicence URI: https://www.os-templates.com/template-terms[m[41m[m
+[32m+[m[32m-->[m[41m[m
+[32m+[m[32m<html>[m[41m[m
+[32m+[m[32m<head>[m[41m[m
+[32m+[m[32m<title>مدرسة السمارة قصبة تادلة</title>[m[41m[m
+[32m+[m[32m<meta charset="utf-8">[m[41m[m
+[32m+[m[32m<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">[m[41m[m
+[32m+[m[32m<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">[m[41m[m
+[32m+[m[32m<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">[m[41m[m
+[32m+[m[32m</head>[m[41m[m
+[32m+[m[32m<body id="top">[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<div class="wrapper row0">[m[41m[m
+[32m+[m[32m  <div id="topbar" class="hoc clear">[m[41m [m
+[32m+[m[32m    <!-- ################################################################################################[m[41m [m
+[32m+[m[32m    <div class="fl_left">[m[41m[m
+[32m+[m[32m      <ul class="nospace inline pushright">[m[41m[m
+[32m+[m[32m        <li><i class="fa fa-user"></i> <a href="#">Faculty</a></li>[m[41m[m
+[32m+[m[32m        <li><i class="fa fa-sign-in"></i> <a href="#">Staff Login</a></li>[m[41m[m
+[32m+[m[32m        <li><i class="fa fa-sign-in"></i> <a href="#">Student Login</a></li>[m[41m[m
+[32m+[m[32m      </ul>[m[41m[m
+[32m+[m[32m    </div>[m[41m[m
+[32m+[m[32m    <div class="fl_right">[m[41m[m
+[32m+[m[32m      <ul class="faico clear">[m[41m[m
+[32m+[m[32m        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>[m[41m[m
+[32m+[m[32m        <li><a class="faicon-pinterest" href="#"><i class="fa fa-pinterest"></i></a></li>[m[41m[m
+[32m+[m[32m        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>[m[41m[m
+[32m+[m[32m        <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>[m[41m[m
+[32m+[m[32m        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>[m[41m[m
+[32m+[m[32m        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>[m[41m[m
+[32m+[m[32m        <li><a class="faicon-rss" href="#"><i class="fa fa-rss"></i></a></li>[m[41m[m
+[32m+[m[32m      </ul>[m[41m[m
+[32m+[m[32m    </div>-->[m[41m[m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m  </div>[m[41m[m
+[32m+[m[32m</div>[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m<div class="wrapper row1" >[m[41m[m
+[32m+[m[32m<div  align="center"><img src="images/demo/arefbk.png" alt=""></div>[m[41m[m
+[32m+[m[32m  <header id="header" class="hoc clear">[m[41m [m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[41m    [m
+[32m+[m[32m<div id="logo" class="fl_left">[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m      <!--<h1><a  href="index.html">مدرسة السمارة الإبتدائية - قصبة تادلة</a></h1>-->[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m      <ul class="faico clear">[m[41m[m
+[32m+[m[32m        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>[m[41m[m
+[32m+[m[41m        [m
+[32m+[m[32m        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>[m[41m[m
+[32m+[m[32m        <li><a class="faicon-rss" href="#"><i class="fa fa-rss"></i></a></li>[m[41m[m
+[32m+[m[32m      </ul>[m[41m[m
+[32m+[m[41m    [m
+[32m+[m[32m    </div>[m[41m[m
+[32m+[m[32m<!--########################################################################################-->[m[41m[m
+[32m+[m[32m    <nav id="mainav" class="fl_right">[m[41m[m
+[32m+[m[32m      <ul class="clear">[m[41m[m
+[32m+[m[32m        <li class="active"><a href="index.html">الرئيسية</a></li>[m[41m[m
+[32m+[m[41m        [m
+[32m+[m[41m        [m
+[32m+[m[41m     [m
+[32m+[m[32m      </ul>[m[41m[m
+[32m+[m[32m    </nav>[m[41m[m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m  </header>[m[41m[m
+[32m+[m[32m</div>[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<div class="wrapper1 bgded " style="background-image:url('images/demo/ecolesmara.jpg')">[m[41m[m
+[32m+[m[32m  <div id="pageintro" class="hoc clear">[m[41m [m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m    <article>[m[41m[m
+[32m+[m[32m     <h2 class="jaune heading underline center" >ECOLE SMARA KASBAH TADLA مدرسة السمارة اﻻبتدائية</h2>[m[41m[m
+[32m+[m[32m      <!--<p>Auctor maecenas blandit malesuada finibus fusce congue quis dolor vitae auctor suspendisse semper tristique ex at condimentum turpis faucibus quis.</p>[m[41m[m
+[32m+[m[32m      <footer><a class="btn" href="#">Mauris et erat</a></footer>-->[m[41m[m
+[32m+[m[32m    </article>[m[41m[m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m  </div>[m[41m[m
+[32m+[m[32m</div>[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- #############################################cases################################################### -->[m[41m[m
+[32m+[m[32m<div class="wrapper row3">[m[41m[m
+[32m+[m[32m  <div id="introblocks" class="hoc clear">[m[41m [m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[41m    [m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m    <div class="clear"></div>[m[41m[m
+[32m+[m[32m  </div>[m[41m[m
+[32m+[m[32m</div>[m[41m[m
+[32m+[m[32m<!-- ##############################################cases################################################## -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<div class="wrapper bgded overlay coloured" style="background-image:url('images/demo/backgrounds/02.png')">[m[41m[m
+[32m+[m[32m  <div class="hoc spaceit-5050 clear">[m[41m [m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m    <article>[m[41m[m
+[32m+[m[32m      <h2 class="heading font-x3">موقع المدرسة اﻻبتدائية السمارة بقصبة تادلة قيد الصيانة المرجو الزيارة في وقت ﻻحق.   شكرا</h2>[m[41m[m
+[32m+[m[32m      <p class="btmspace-50"></p>[m[41m[m
+[32m+[m[32m      <footer><a class="btn medium" href="#"></a></footer>[m[41m[m
+[32m+[m[32m    </article>[m[41m[m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m  </div>[m[41m[m
+[32m+[m[32m</div>[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ###########################################متعلمون و اساتذة##################################################### -->[m[41m[m
+[32m+[m[32m<!-- ###########################################متعلمون و اساتذة ##################################################### -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<div class="wrapper row4">[m[41m[m
+[32m+[m[32m  <footer id="footer" class="hoc topspace-1 clear">[m[41m [m
+[32m+[m[32m    <!-- ################################################################################################[m[41m [m
+[32m+[m[32m    <div id="newsletter" class="clear">[m[41m[m
+[32m+[m[32m      <div class="one_quarter first">[m[41m[m
+[32m+[m[32m        <h6 class="nospace topspace-5"><i class="fa fa-newspaper-o"></i> Latest News</h6>[m[41m[m
+[32m+[m[32m      </div>[m[41m[m
+[32m+[m[32m      <form class="three_quarter" method="post" action="#">[m[41m[m
+[32m+[m[32m        <div class="clear">[m[41m[m
+[32m+[m[32m          <input class="one_third first" type="text" value="" placeholder="Name" required>[m[41m[m
+[32m+[m[32m          <input class="one_third" type="email" value="" placeholder="Email" required>[m[41m[m
+[32m+[m[32m          <button class="one_third" type="submit" title="Sign Up">Sign Up</button>[m[41m[m
+[32m+[m[32m        </div>[m[41m[m
+[32m+[m[32m      </form>[m[41m[m
+[32m+[m[32m    </div>[m[41m[m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m    <div class="group">[m[41m[m
+[32m+[m[32m      <div class="one_half first">[m[41m[m
+[32m+[m[32m        <h6 class="title"></h6>[m[41m[m
+[32m+[m[32m        <p class="btmspace-30"></p>[m[41m[m
+[32m+[m[32m        <ul class="nospace inline pushright">[m[41m[m
+[32m+[m[32m          <li><a href="#"></a></li>[m[41m[m
+[32m+[m[32m          <li><a href="#"></a></li>[m[41m[m
+[32m+[m[32m          <li><a href="#"></a></li>[m[41m[m
+[32m+[m[32m          <li><a href="#"></a></li>[m[41m[m
+[32m+[m[32m        </ul>[m[41m[m
+[32m+[m[32m      </div>[m[41m[m
+[32m+[m[32m      <div class="one_quarter">[m[41m[m
+[32m+[m[32m        <h6 class="title"></h6>[m[41m[m
+[32m+[m[32m        <article>[m[41m[m
+[32m+[m[32m          <h2 class="nospace font-x1"><a href="#"></a></h2>[m[41m[m
+[32m+[m[32m          <!--<time class="font-xs" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>-->[m[41m[m
+[32m+[m[32m          <p></p>[m[41m[m
+[32m+[m[32m        </article>[m[41m[m
+[32m+[m[32m      </div>[m[41m[m
+[32m+[m[32m      <div class="one_quarter">[m[41m[m
+[32m+[m[32m        <h6 class="title">روابط مفيدة</h6>[m[41m[m
+[32m+[m[32m        <ul class="nospace linklist">[m[41m[m
+[32m+[m[32m          <li><a href="http://www.cg.gov.ma" target="blank">موقع رئيس الحكومة المغربية</a></li>[m[41m[m
+[32m+[m[32m          <li><a href="http://mmsp.gov.ma" target="blank">موقع وزارة إصلاح اﻻدارة و الوظيفة العمومية</a></li>[m[41m[m
+[32m+[m[32m          <li><a href="http://www.sgg.gov.ma/arabe/accueil.aspx" target="blank">الأمانة العامة للحكومة</a></li>[m[41m[m
+[32m+[m[32m          <li><a href="http://egov.ma/ar" target="blank"> برنامج الحكومة اﻻلكترونية</a></li>[m[41m[m
+[32m+[m[32m          <li><a href="https://www.emploi-public.ma/ar" target="blank">بوابة التشغيل العمومية</a></li>[m[41m[m
+[32m+[m[32m        </ul>[m[41m[m
+[32m+[m[32m      </div>[m[41m[m
+[32m+[m[32m    </div>[m[41m[m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m  </footer>[m[41m[m
+[32m+[m[32m</div>[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<div class="wrapper row5">[m[41m[m
+[32m+[m[32m  <div id="copyright" class="hoc clear">[m[41m [m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m    <p class="fl_left">الحقوق &copy; 2018 - مسموح بالنسخ شريطة ذكر المصدر - <a href="http://ecolesmara.com">ecolesmara.com</a></p>[m[41m[m
+[32m+[m[32m    <p class="fl_right">قالب من تصميم <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS</a></p>[m[41m[m
+[32m+[m[32m    <!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m  </div>[m[41m[m
+[32m+[m[32m</div>[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<!-- ################################################################################################ -->[m[41m[m
+[32m+[m[32m<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>[m[41m[m
+[32m+[m[32m<!-- JAVASCRIPTS -->[m[41m[m
+[32m+[m[32m<script src="layout/scripts/jquery.min.js"></script>[m[41m[m
+[32m+[m[32m<script src="layout/scripts/jquery-ui.min.js"></script>[m[41m[m
+[32m+[m[32m<script src="layout/scripts/jquery.backtotop.js"></script>[m[41m[m
+[32m+[m[32m<script src="layout/scripts/jquery.mobilemenu.js"></script>[m[41m[m
+[32m+[m[32m<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>[m[41m[m
+[32m+[m[32m<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>[m[41m[m
+[32m+[m[32m<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>[m[41m[m
+[32m+[m[32m<!-- IE9 Placeholder Support -->[m[41m[m
+[32m+[m[32m<script src="layout/scripts/jquery.placeholder.min.js"></script>[m[41m[m
+[32m+[m[32m<!-- / IE9 Placeholder Support -->[m[41m[m
+[32m+[m[32m</body>[m[41m[m
+[32m+[m[32m</html>[m[41m[m
