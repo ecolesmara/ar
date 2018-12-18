@@ -57,6 +57,15 @@
 
       <!--<h1><a  href="index.html">مدرسة السمارة الإبتدائية - قصبة تادلة</a></h1>-->
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
+<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
       <ul class="faico clear">
         <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
         
